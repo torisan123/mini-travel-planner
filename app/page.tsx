@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 export default function Home() {
   const [destination, setDestination] = useState('');
@@ -88,7 +89,7 @@ export default function Home() {
           <div className="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-100">
             <h2 className="text-xl font-bold text-blue-900 mb-3">🌟 おすすめ旅行プラン</h2>
             <div className="text-gray-700 whitespace-pre-wrap leading-relaxed">
-              {plan}
+              <ReactMarkdown>{plan}</ReactMarkdown>
             </div>
           </div>
         )}
