@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✈️ Mini Travel Planner (AI旅行プランナー)
 
-## Getting Started
+Next.js と Google Gemini API を活用して、ユーザーが指定した行き先と日数に応じたオリジナルの旅行プランを自動生成するWebアプリケーションです。
 
-First, run the development server:
+## 🛠️ 技術スタック
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **フロントエンド / バックエンド**: Next.js (App Router), TypeScript, React
+- **スタイリング**: Tailwind CSS
+- **AI連携**: Google Gen AI SDK (`@google/genai`), `gemini-3.5-flash-lite` モデル
+- **デプロイ・ホスティング**: Vercel
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 現在の実装機能
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **旅行プランの動的生成**
+   - ユーザーが「行き先（例: 沖縄）」と「日数（例: 2泊3日）」を入力すると、Gemini APIが観光スポットやグルメ、モデルコースを提案。
+2. **モダンなUI & レスポンス処理**
+   - ローディング状態の制御やマークダウン形式でのプラン表示に対応。
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🗺️ 今後のロードマップ（AWS連携 & 機能拡張）
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+インフラストラクチャおよびデータベース連携の学習・ポートフォリオとしての完成度向上を目的として、以下のステップを予定しています。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] **Step 1: AWSデータベースの選定と設計**
+  - Amazon RDS (PostgreSQL) または Amazon DynamoDB の検討とテーブル設計
+- [ ] **Step 2: データベース連携の実装**
+  - 生成した旅行プランをAWS上のDBへ保存する機能の追加
+  - 過去に生成したプランを一覧・閲覧できる履歴機能の実装
+- [ ] **Step 3: インフラ・セキュリティのブラッシュアップ**
+  - Vercel と AWS 間のセキュアな接続設定、環境変数の管理最適化
